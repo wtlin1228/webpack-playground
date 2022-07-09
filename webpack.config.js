@@ -4,11 +4,13 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   mode: "development",
   entry: {
-    bundle: path.resolve(__dirname, "src/index.js"),
+    index: {
+      import: path.resolve(__dirname, "src/index.js"),
+    },
   },
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "[name]-[contenthash].js",
+    filename: "[name].[contenthash].bundle.js",
     clean: true,
     assetModuleFilename: "[name][ext]",
   },
